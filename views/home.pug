@@ -1,0 +1,26 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' integrity='sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu' crossorigin='anonymous')
+  title Document
+.container
+  h1.text-center Ingresar Productos
+  .row
+    form(action='/api/productos/guardar' method='post')
+      .form-group.col-8
+        label(for='formGroupExampleInput') Titulo
+        input#formGroupExampleInput.form-control(type='text' name='title' placeholder='Example input')
+      .form-group
+        label(for='formGroupExampleInput2') Precio
+        input#formGroupExampleInput2.form-control(type='number' name='price' placeholder='Another input')
+      .form-group
+        label(for='formGroupExampleInput2') URL imagen
+        input#formGroupExampleInput2.form-control(type='text' name='thumbnail' placeholder='Another input')
+      input.btn.btn-primary.btn-block(type='submit' value='Enviar')
+  .row
+    br
+    br
+    .alert.alert-warning.text-center(role='alert')
+      | No existen productos cargados
